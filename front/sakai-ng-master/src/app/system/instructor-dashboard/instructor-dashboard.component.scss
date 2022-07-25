@@ -1,0 +1,13 @@
+.dashboard__top {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   &-item {
+      text-align: center;
+      & .p-float-label:first-child {
+         font-size: 30px;
+         line-height: 130%;
+      }
+   }
+}

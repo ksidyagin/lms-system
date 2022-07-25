@@ -1,0 +1,62 @@
+<div class="courses">
+
+  <div class="container">
+
+    <div>
+      <div id="background" [ngClass]="{'show-background': filtersFlag, 'close-backfround': filtersFlag == false}"
+        (click)="closeFilters($event)"></div>
+      <div id="filters" class="filters"
+        [ngClass]="{'show-filters': filtersFlag, 'close-filters': filtersFlag == false}"></div>
+    </div>
+
+    <p-sidebar [(visible)]="visibleSidebar" position="right" [baseZIndex]="10000">
+      <h3 style="font-weight:normal">Right Sidebar</h3>
+    </p-sidebar>
+
+    <div class="courses__wrapper">
+      <div class="card filter-container course__flex-wrap">
+        <div class="courses-count mb-2">
+          Отображено {{this.showedCourses}} из {{this.allCourses}} курсов
+        </div>
+        <div class="sort mb-2">
+          <span>Сортировать по </span>
+          <p-dropdown class="sort-options" [options]="sortOptions" [(ngModel)]="selectedDrop"
+            placeholder="Выберите опцию" [showClear]="true"></p-dropdown>
+          <button pButton pRipple type="button" label="Фильтры" class="filter p-button-outlined p-button-secondary"
+            (click)="visibleSidebar=true"></button>
+        </div>
+      </div>
+
+      <div class="card">
+
+        <h5>Популярные курсы</h5>
+        <p-dataView #dv [value]="courses" [paginator]="true" [rows]="4" filterBy="name" [sortField]="sortField"
+          [sortOrder]="sortOrder" layout="grid">
+          <ng-template let-course pTemplate="gridItem">
+            <div class="col-12 md:col-4 xl:col-3">
+              <div class="card m-3 border-1 surface-border">
+                <div class="text-center">
+                  <div class="course__card-img--wrap mb-1" (click)="goToCourse(course.id)"
+                    style="background-image: url({{course.image_url}});">
+                    <img [src]="course.image_url" [alt]="course.title"
+                      class="course__card-img w-12 shadow-2 my-2 mx-0" />
+                  </div>
+                  <a class="text-2xl font-bold text-title" (click)="goToCourse(course.id)">{{course.title}}</a>
+                  <div class="mb-1 font-italic">
+                    {{course.author_second_name}} {{course.author_first_name}}
+                  </div>
+                  <div class="mb-2 course__card-description">{{course.preview_description}}</div>
+                  <p-rating [ngModel]="course.rating" [readonly]="true" [cancel]="false"></p-rating>
+                  <hr class="my-2">
+                  <a class="course__btn-trailer" *ngIf="course.trailer_url" href="{{course.trailer_url}}"
+                    target="_blank">Смотреть трейлер</a>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </p-dataView>
+      </div>
+
+    </div>
+  </div>
+</div>

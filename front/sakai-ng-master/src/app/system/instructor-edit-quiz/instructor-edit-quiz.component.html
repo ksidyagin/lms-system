@@ -1,0 +1,101 @@
+<div class="editcourse">
+   <div class="container">
+      <div class="editcourse__wrapper">
+         <div class="card card-w-title">
+            <div class="title__wrapper">
+               <h1>Edit quiz</h1>
+               <p-breadcrumb [model]="breadcrumbItems" [home]="{icon: 'pi pi-home'}"></p-breadcrumb>
+            </div>
+         </div>
+
+         <div class="grid">
+            <div class="col-12 lg:col-8">
+               <div class="card">
+                  <h2>Questions</h2>
+                  ?
+
+                  <h2>New Question</h2>
+                  <div class="field">
+                     <label htmlFor="name1">Question</label>
+                     <p-editor [(ngModel)]="description" [style]="{'height':'320px'}"></p-editor>
+                     <small>Shortly describe the question.</small>
+                  </div>
+                  <div class="field">
+                     <label htmlFor="name1">Question</label>
+                     <p-dropdown [options]="cities" [(ngModel)]="selectedDrop" placeholder="Select a City"
+                        [showClear]="true"></p-dropdown>
+                  </div>
+                  <div class="field">
+                     <label htmlFor="name1">Question</label>
+                     <p-multiSelect [options]="countries1" [(ngModel)]="selectedMulti1" defaultLabel="Select a Country"
+                        optionLabel="name" class="multiselect-custom">
+                        <ng-template let-value pTemplate="selectedItems">
+                           <div
+                              class="country-item country-item-value inline-flex align-items-center py-1 px-2 bg-primary text-primary border-round mr-2"
+                              *ngFor="let option of selectedMulti1">
+                              <img src="assets/demo/flags/flag_placeholder.png"
+                                 [class]="'flag flag-' + option.code.toLowerCase()" />
+                              <div>{{option.name}}</div>
+                           </div>
+                           <div *ngIf="!selectedMulti1 || selectedMulti1.length === 0" class="country-placeholder">
+                              Select course
+                           </div>
+                        </ng-template>
+                        <ng-template let-country1 pTemplate="item">
+                           <div class="flex align-items-center country-item">
+                              <img src="assets/demo/flags/flag_placeholder.png"
+                                 [class]="'mr-2 flag flag-' + country1.code.toLowerCase()"
+                                 style="width:18px; height:12px;" />
+                              <div>{{country1.name}}</div>
+                           </div>
+                        </ng-template>
+                     </p-multiSelect>
+                  </div>
+                  <div class="field">
+                     <label htmlFor="name1">Completion Points</label>
+                     <p-inputNumber mode="decimal" [showButtons]="true" [min]="0" [max]="1000">
+                     </p-inputNumber>
+                  </div>
+                  <a class="add__section-btn">Add question</a>
+
+               </div>
+            </div>
+
+            <div class="col-12 lg:col-4">
+               <div class="card">
+                  <a class="save__changes-btn">Save changes</a>
+                  <a class="card-link" href="">Save Draft</a>
+                  <a class="card-link" href="">Delete Course</a>
+
+                  <h2>Courses</h2>
+                  <h5>Add to course</h5>
+                  <p-multiSelect [options]="countries2" [(ngModel)]="selectedMulti2" defaultLabel="Select a Country"
+                     optionLabel="name" class="multiselect-custom">
+                     <ng-template let-value pTemplate="selectedItems">
+                        <div
+                           class="country-item country-item-value inline-flex align-items-center py-1 px-2 bg-primary text-primary border-round mr-2"
+                           *ngFor="let option of selectedMulti2">
+                           <img src="assets/demo/flags/flag_placeholder.png"
+                              [class]="'flag flag-' + option.code.toLowerCase()" />
+                           <div>{{option.name}}</div>
+                        </div>
+                        <div *ngIf="!selectedMulti2 || selectedMulti2.length === 0" class="country-placeholder">
+                           Select course
+                        </div>
+                     </ng-template>
+                     <ng-template let-country2 pTemplate="item">
+                        <div class="flex align-items-center country-item">
+                           <img src="assets/demo/flags/flag_placeholder.png"
+                              [class]="'mr-2 flag flag-' + country2.code.toLowerCase()"
+                              style="width:18px; height:12px;" />
+                           <div>{{country2.name}}</div>
+                        </div>
+                     </ng-template>
+                  </p-multiSelect>
+                  <small>Select course</small>
+               </div>
+            </div>
+         </div>
+
+      </div>
+   </div>

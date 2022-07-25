@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "../node_modules/primeng/resources/primeng.min.css";
+@import "../node_modules/primeflex/primeflex.scss";
+@import "../node_modules/primeicons/primeicons.css";
+@import "../node_modules/prismjs/themes/prism-coy.css";
+@import "assets/demo/flags/flags.css";
+@import "assets/demo/documentation.scss";
+@import "assets/sass/layout/_variables";
+@import "assets/sass/layout/_layout";
+@import "assets/sass/overrides/_overrides";
+
+.p-dataview {
+   margin-bottom: 30px;
+}
+
+.p-accordion p-accordiontab .p-accordion-tab {
+   margin-bottom: 2rem !important;
+}
+
+.p-dropdown,
+.p-multiselect,
+.p-inputnumber {
+   width: 100%;
+}
+
+p-inputnumber,
+.p-inputnumber {
+   display: inline-flex;
+   width: 100%;
+}
+
+//.p-inputtext {
+//  width: 100%;
+//  padding: 1rem;
+//}
+//
+//.pi-eye {
+//  right: 0.75rem;
+//  color: #6c757d;
+//}

@@ -1,0 +1,84 @@
+
+<div class="grid grid-nogutter surface-section text-800">
+    <div class="col-12 md:col-6 p-6 text-center md:text-left flex align-items-center ">
+        <section>
+            <span class="block text-6xl font-bold mb-1">Learn Angular</span>
+            <div class="text-6xl text-primary font-bold mb-3"></div>
+            <p class="mt-0 mb-4 text-700 line-height-3">It is not every day that one of the most important front-end libraries in web development gets a complete overhaul. Keep your skills relevant and up-to-date with this comprehensive introduction to Google’s popular community project.</p>
+
+            <button pButton pRipple label="Начать" type="button" class="mr-3 p-button-raised"></button>
+            <button pButton pRipple label="Подробнее" type="button" class="p-button-outlined"></button>
+        </section>
+    </div>
+    <div class="col-12 md:col-6 overflow-hidden">
+        <img src="assets/demo/images/ang.png" alt="Image" class="md:ml-auto block md:h-full" style="clip-path: polygon(8% 0, 100% 0%, 100% 100%, 0 100%)">
+    </div>
+</div>
+<div class="course__time">
+    <div class="course__time-lessons"><i class="pi pi-calendar"></i> 12 уроков</div>
+    <div class="course__time-hours"><i class="pi pi-clock"></i> 2ч.46мин</div>
+</div>
+<div class="course-about">
+    <div class="course-about__block">
+        <div class="course-about__block-title">
+            Введение
+        </div>
+        <div class="course-about__block-descr">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis mollitia numquam a accusamus sunt voluptatibus officiis non. 
+        </div>
+    </div>
+    
+    <div class="course-about__block">
+        <div class="course-about__block-title">
+            Что вы будете изучать:
+        </div>
+        <div class="course-about__block-descr">
+           <i class="pi pi-check"></i> Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        </div>
+        <div class="course-about__block-descr">
+            <i class="pi pi-check"></i> Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+         </div>
+         <div class="course-about__block-descr">
+            <i class="pi pi-check"></i> Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+         </div>
+         <div class="course-about__block-descr">
+            <i class="pi pi-check"></i> Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+         </div>
+         <div class="course-about__block-descr">
+            <i class="pi pi-check"></i> Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+         </div>
+    </div>
+</div>
+<div class="skill-assessment">
+    <div class="skill-assessment__info">
+        <div class="skill-assessment__info-title">Оценка Навыков</div>
+        <div class="skill-assessment__info-descr">Измерьте свое мастерство, чтобы узнать, с чего начать.</div>
+        <button pButton pRipple label="Начать тест" type="button" class="mr-3 p-button-raised"></button>
+    </div>
+    <p-steps [model]="items"></p-steps>
+</div>
+<div class="levels">
+    <p-timeline [value]="levels" align="left" styleClass="customized-timeline">
+		<ng-template pTemplate="marker" let-event>
+			<span class="custom-marker p-shadow-2">
+                <span style="color:#000">{{event.place}}</span>
+            </span>
+		</ng-template>
+		<ng-template pTemplate="content" let-event>
+			<p-card [header]="event.name">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error
+					repudiandae numquam deserunt
+					quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate
+					neque quas!</p>
+                    <p-carousel [value]="products" [numVisible]="3" [numScroll]="3" [circular]="false" [responsiveOptions]="responsiveOptions" [showIndicators]="false">
+                        <ng-template let-product pTemplate="item">
+                                <div class="course">
+                                  <img src="https://luma.humatheme.com/public/images/paths/angular_testing_430x168.png" alt="">
+                                  <div class="course-title">Seal<i class="pi pi-heart"></i></div>
+                                </div>
+                        </ng-template>
+                    </p-carousel>
+			</p-card>
+		</ng-template>
+	</p-timeline>
+</div>

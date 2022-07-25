@@ -1,0 +1,135 @@
+<div class="editcourse">
+    <div class="container">
+       <div class="editcourse__wrapper">
+          <div class="card card-w-title">
+             <div class="title__wrapper">
+                <h1>Add course</h1>
+                <p-breadcrumb [model]="breadcrumbItems" [home]="{icon: 'pi pi-home'}"></p-breadcrumb>
+             </div>
+          </div>
+ 
+          <div class="grid">
+             <div class="col-12 lg:col-8">
+                <div class="card">
+                   <h2>Basic information</h2>
+                   <div class="field">
+                      <label htmlFor="name1">Course title</label>
+                      <input pInputText id="name1" type="text" />
+                      <small>Please see our <a href=""> course title guideline</a>.</small>
+                   </div>
+                   <div class="field">
+                      <label htmlFor="name1">Description</label>
+                      <p-editor [(ngModel)]="description" [style]="{'height':'320px'}"></p-editor>
+                      <small>Shortly describe this course.</small>
+                   </div>
+ 
+                   <h2>Sections</h2>
+                   <p-accordion>
+                      <p-accordionTab header="Header I" [selected]="true" class="line-height-3 m-0">
+                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                         labore
+                         et dolore magna aliqua.
+                         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                         consequat.
+                         Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                         pariatur.
+                         Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
+                         id
+                         est laborum.
+                      </p-accordionTab>
+                      <p-accordionTab header="Header II" class="line-height-3 m-0">
+                         Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                         laudantium,
+                         totam rem aperiam, eaque
+                         ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                         Nemo
+                         enim ipsam voluptatem quia
+                         voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+                         voluptatem sequi nesciunt.
+                         Consectetur, adipisci velit, sed quia non numquam eius modi.
+                      </p-accordionTab>
+                      <p-accordionTab header="Header III" class="line-height-3 m-0">
+                         At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
+                         deleniti atque corrupti quos dolores
+                         et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui
+                         officia deserunt mollitia animi, id est laborum et dolorum fuga.
+                         Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis
+                         est
+                         eligendi optio cumque nihil impedit
+                         quo minus.
+                      </p-accordionTab>
+                      <p-accordionTab header="Header IV" class="line-height-3 m-0">
+                         At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
+                         deleniti atque corrupti quos dolores
+                         et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui
+                         officia deserunt mollitia animi, id est laborum et dolorum fuga.
+                         Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis
+                         est
+                         eligendi optio cumque nihil impedit
+                         quo minus.
+                      </p-accordionTab>
+                   </p-accordion>
+ 
+                   <a class="add__section-btn">Add section</a>
+ 
+                </div>
+             </div>
+ 
+             <div class="col-12 lg:col-4">
+                <div class="card">
+                   <a class="save__changes-btn">Save changes</a>
+                   <a class="card-link" href="">Save Draft</a>
+                   <a class="card-link" href="">Delete Course</a>
+ 
+                   <h2>Video</h2>
+                   <video class="video" src=""></video>
+                   <div class="field">
+                      <label htmlFor="name1">URL</label>
+                      <input pInputText id="name1" type="text" placeholder="Enter video URL" />
+                      <small>Enter a valid video URL.</small>
+                   </div>
+ 
+                   <h2>Options</h2>
+                   <h5>Categories</h5>
+                   <p-dropdown [options]="cities" [(ngModel)]="selectedDrop" placeholder="Select a City"
+                      [showClear]="true"></p-dropdown>
+                   <small>Select a category.</small>
+ 
+                   <h5>Price</h5>
+                   <div class="p-inputgroup">
+                      <span class="p-inputgroup-addon">$</span>
+                      <input type="text" pInputText placeholder="Price">
+                   </div>
+                   <small>The recommended price is between $17 and $24</small>
+ 
+                   <h5>Tags</h5>
+                   <p-multiSelect [options]="countries" [(ngModel)]="selectedMulti" defaultLabel="Select a Country"
+                      optionLabel="name" class="multiselect-custom">
+                      <ng-template let-value pTemplate="selectedItems">
+                         <div
+                            class="country-item country-item-value inline-flex align-items-center py-1 px-2 bg-primary text-primary border-round mr-2"
+                            *ngFor="let option of selectedMulti">
+                            <img src="assets/demo/flags/flag_placeholder.png"
+                               [class]="'flag flag-' + option.code.toLowerCase()" />
+                            <div>{{option.name}}</div>
+                         </div>
+                         <div *ngIf="!selectedMulti || selectedMulti.length === 0" class="country-placeholder">
+                            Select tags
+                         </div>
+                      </ng-template>
+                      <ng-template let-country pTemplate="item">
+                         <div class="flex align-items-center country-item">
+                            <img src="assets/demo/flags/flag_placeholder.png"
+                               [class]="'mr-2 flag flag-' + country.code.toLowerCase()"
+                               style="width:18px; height:12px;" />
+                            <div>{{country.name}}</div>
+                         </div>
+                      </ng-template>
+                   </p-multiSelect>
+                   <small>Select one or more tags.</small>
+                </div>
+             </div>
+          </div>
+ 
+       </div>
+    </div>

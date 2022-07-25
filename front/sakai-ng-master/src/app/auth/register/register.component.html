@@ -1,0 +1,66 @@
+<div class="card">
+    <form (ngSubmit)="enter()" [formGroup]="register_form">
+        <h5>Register</h5>
+        <div class="p-fluid">
+            <div class="field">
+                <label htmlFor="email1">Email</label>
+                <input formControlName="email" pInputText id="email1" type="text" ngModel email/>
+            </div>
+            <div class="field">
+                <label htmlFor="password1">Password</label>
+                <input formControlName="password" pInputText id="password1" type="text" />
+            </div>
+            <div class="field">
+                <label htmlFor="fio1">F. I. O.</label>
+                <input formControlName="fio" pInputText id="fio1" type="text" />
+            </div>
+            <div class="field-checkbox mb-0">
+                <p-checkbox name="group1" value="true" formControlName="is_mentor" id="ch"></p-checkbox>
+                <label for="ch">Mentor</label>
+            </div>
+
+        </div>
+
+
+        <button pButton pRipple label="Register" [disabled]="register_form.invalid" class="mr-2 mb-2"></button>
+        <p-button routerLink="../login" label="Log In" styleClass="p-button-link mr-2 mb-2"></p-button>
+        <p-button routerLink="../forgot_password" label="Forgot password" styleClass="p-button-link mr-2 mb-2"></p-button>
+    </form>
+</div>
+
+<h1>ПОЛЬЗУЙТЕСЬ ВЕРХНИМ</h1>
+
+
+<!--<div class="surface-0 flex align-items-center justify-content-center min-h-screen min-w-screen overflow-hidden">-->
+<!--  <div class="grid justify-content-center p-2 lg:p-0" style="min-width:80%">-->
+<!--    <div class="col-12 mt-5 xl:mt-0 text-center">-->
+<!--      <img src="assets/layout/images/{{config.dark ? 'logo-white' : 'logo-dark'}}.svg" alt="Sakai logo" class="mb-5" style="width:81px; height:60px;">-->
+<!--    </div>-->
+<!--    <div [formGroup]="loginForm" class="col-12 xl:col-6" style="border-radius:56px; padding:0.3rem; background: linear-gradient(180deg, var(&#45;&#45;primary-color) 10%, rgba(33, 150, 243, 0) 30%);">-->
+<!--      <div class="h-full w-full m-0 py-7 px-4" style="border-radius:53px; background: linear-gradient(180deg, var(&#45;&#45;surface-50) 38.9%, var(&#45;&#45;surface-0));">-->
+<!--        <div class="text-center mb-5">-->
+<!--          &lt;!&ndash;          <img src="assets/layout/images/avatar.png" alt="Image" height="50" class="mb-3">&ndash;&gt;-->
+<!--          <div class="text-900 text-3xl font-medium mb-3">Добро пожаловать!</div>-->
+<!--          <span class="text-600 font-medium">Войдите, чтобы продолжить</span>-->
+<!--        </div>-->
+
+<!--        <div class="w-full md:w-10 mx-auto">-->
+<!--          <label for="email1" class="block text-900 text-xl font-medium mb-2">Email</label>-->
+<!--          <input formControlName="email" id="email1" type="text" placeholder="Email адрес" pInputText class="w-full mb-3" style="padding:1rem;">-->
+
+<!--          <label for="password1" class="block text-900 font-medium text-xl mb-2">Пароль</label>-->
+<!--          <p-password id="password1" [(ngModel)]="password" placeholder="Пароль" [toggleMask]="true" styleClass="w-full mb-3"></p-password>-->
+
+<!--          <div class="flex align-items-center justify-content-between mb-5">-->
+<!--            <div class="flex align-items-center">-->
+<!--              <p-checkbox id="rememberme1" [binary]="true" styleClass="mr-2"></p-checkbox>-->
+<!--              <label for="rememberme1">Запомнить</label>-->
+<!--            </div>-->
+<!--            <a [routerLink]="'/forgot_password'" class="font-medium no-underline ml-2 text-right cursor-pointer" style="color: var(&#45;&#45;primary-color)">Забыли пароль?</a>-->
+<!--          </div>-->
+<!--          <button (click)="enter()" pButton pRipple label="Sign In" class="w-full p-3 text-xl"></button>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->

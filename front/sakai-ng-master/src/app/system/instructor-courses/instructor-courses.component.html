@@ -1,0 +1,71 @@
+<div class="courses">
+   <div class="container">
+      <div class="courses__wrapper">
+         <div class="card card-w-title">
+            <div class="title__wrapper">
+               <h1>Courses</h1>
+               <a class="add__course-btn" (click)="goToAddCourse()">Add course</a>
+            </div>
+            <p-breadcrumb [model]="breadcrumbItems" [home]="{icon: 'pi pi-home'}"></p-breadcrumb>
+         </div>
+
+         <div class="card">
+            <h5>Популярные курсы</h5>
+            <p-dataView #dv [value]="courses" [paginator]="true" [rows]="4" filterBy="name" [sortField]="sortField"
+               [sortOrder]="sortOrder" layout="grid">
+               <ng-template let-course pTemplate="gridItem">
+                  <div class="col-12 md:col-4 xl:col-3">
+                     <div class="card m-3 border-1 surface-border">
+                        <div class="text-center">
+                           <div class="course__card-img--wrap mb-1" (click)="goToCourse(course.id)"
+                              style="background-image: url({{course.image_url}});">
+                              <img [src]="course.image_url" [alt]="course.title"
+                                 class="course__card-img w-12 shadow-2 my-2 mx-0" />
+                           </div>
+                           <a class="text-2xl font-bold text-title" (click)="goToCourse(course.id)">{{course.title}}</a>
+                           <div class="mb-1 font-italic">
+                              {{course.author_name.second_name}} {{course.author_name.first_name}}
+                           </div>
+                           <div class="mb-2 course__card-description">{{course.preview_description}}</div>
+                           <p-rating [ngModel]="course.rating" [readonly]="true" [cancel]="false"></p-rating>
+                           <hr class="my-2">
+                           <a class="course__btn-trailer" *ngIf="course.trailer_url" href="{{course.trailer_url}}"
+                              target="_blank">Смотреть трейлер</a>
+                        </div>
+                     </div>
+                  </div>
+               </ng-template>
+            </p-dataView>
+         </div>
+
+         <div class="card">
+            <h5>Курсы развития</h5>
+            <p-dataView #dv [value]="courses" [paginator]="true" [rows]="4" filterBy="name" [sortField]="sortField"
+               [sortOrder]="sortOrder" layout="grid">
+               <ng-template let-course pTemplate="gridItem">
+                  <div class="col-12 md:col-4 xl:col-3">
+                     <div class="card m-3 border-1 surface-border">
+                        <div class="text-center">
+                           <div class="course__card-img--wrap mb-1" (click)="goToCourse(course.id)"
+                              style="background-image: url({{course.image_url}});">
+                              <img [src]="course.image_url" [alt]="course.title"
+                                 class="course__card-img w-12 shadow-2 my-2 mx-0" />
+                           </div>
+                           <a class="text-2xl font-bold text-title" (click)="goToCourse(course.id)">{{course.title}}</a>
+                           <div class="mb-1 font-italic">
+                              {{course.author_name.second_name}} {{course.author_name.first_name}}
+                           </div>
+                           <div class="mb-2 course__card-description">{{course.preview_description}}</div>
+                           <p-rating [ngModel]="course.rating" [readonly]="true" [cancel]="false"></p-rating>
+                           <hr class="my-2">
+                           <a class="course__btn-trailer" *ngIf="course.trailer_url" href="{{course.trailer_url}}"
+                              target="_blank">Смотреть трейлер</a>
+                        </div>
+                     </div>
+                  </div>
+               </ng-template>
+            </p-dataView>
+         </div>
+      </div>
+   </div>
+</div>

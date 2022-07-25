@@ -1,0 +1,89 @@
+h2 {
+    margin-left: 1rem;
+}
+
+.path {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.path-info {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.path-info > img {
+    height: 40px;
+}
+
+.path-desc {
+    display: flex;
+    flex-direction: column;
+}
+.path-desc > .name {
+    margin-bottom: 0 !important;
+    color: black;
+    font-weight: 600;
+}
+
+.icon {
+    width: 40px;
+}
+
+.panel {
+    
+}
+
+.panel > .path-info {
+    display: flex;
+}   
+
+.achivement {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(127, 0, 239, 1) !important;
+}
+
+.achivement p {
+    color: white;
+    margin: 0 !important;
+}
+
+.achiv-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 10px;
+}
+
+.achiv-info .name {
+    font-size: 150%;
+    font-weight: 700;
+}
+
+.achiv-icon {
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 4px solid rgba(0, 0, 0, 0.2);
+}
+
+.achiv-desc {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem;
+}
+
+.achiv-desc > .name {
+    font-size: 130%;
+    font-weight: 700;
+}

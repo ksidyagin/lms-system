@@ -1,0 +1,25 @@
+<!-- БЭМ - секция__блок-элемент--модификатор -->
+<header class="header">
+   <div class="container">
+      <div class="header__wrapper">
+         <a class="header__logo" href="#">
+            <img src="../../../../../assets/img/logo.png" alt="" class="logo">
+         </a>
+
+         <div class="header__links">
+            <a class="header__lk" [routerLink]="['', 'page-foreman']">
+               <img src="../../../../../assets/img/lc.png" alt="" class="header__item-img">
+            </a>
+
+            <a class="header__notifications" [routerLink]="['', 'page-worker']">
+               <img src="../../../../../assets/img/push.png" alt="" class="header__item-img">
+            </a>
+
+            <a class="header__settings" [routerLink]="['', 'auth']" (click)="exit()">
+               <img src="../../../../../assets/img/settings.png" alt="" class="header__item-img">
+            </a>
+         </div>
+
+      </div>
+   </div>
+</header>

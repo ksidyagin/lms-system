@@ -1,0 +1,57 @@
+input,
+textarea {
+   width: 100%;
+}
+
+.add__section-btn {
+   background: none;
+   border: 1px solid #dee2e6;
+   border-radius: 0.25rem;
+   padding: 0.5rem 1rem;
+   cursor: pointer;
+   font-size: 16px;
+   line-height: 130%;
+   transition: all 0.5s;
+   // margin: 0 auto;
+   // display: block;
+   // width: fit-content;
+   &:hover {
+      border: 1px solid #868e96;
+   }
+}
+
+.save__changes-btn {
+   background: var(--primary-color);
+   border: 1px solid #dee2e6;
+   border-radius: 0.5rem;
+   padding: 0.5rem 1rem;
+   cursor: pointer;
+   font-size: 16px;
+   line-height: 130%;
+   transition: all 0.5s;
+   margin: 0 auto;
+   display: block;
+   width: fit-content;
+   color: var(--surface-card);
+   margin-bottom: 1rem;
+   &:hover {
+      border: 1px solid #868e96;
+   }
+}
+
+.card-link {
+   width: 100%;
+   border-top: 1px solid #dee2e6;
+   display: block;
+   padding: 1rem;
+}
+
+.video {
+   border: 1px solid #dee2e6;
+   border-radius: 0.5rem;
+   width: 100%;
+}
+
+svg {
+   width: 36px;
+}

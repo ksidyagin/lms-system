@@ -1,0 +1,151 @@
+<div class="editcourse">
+   <div class="container">
+      <div class="editcourse__wrapper">
+         <div class="card card-w-title">
+            <div class="title__wrapper">
+               <h1>Изменение курса</h1>
+               <p-breadcrumb [model]="breadcrumbItems" [home]="{icon: 'pi pi-home'}"></p-breadcrumb>
+            </div>
+         </div>
+
+         <div>
+            <form (ngSubmit)="enter()" [formGroup]="edit_course_form" class="grid">
+               <div class="col-12 lg:col-8">
+                  <div class="card">
+                     <h2>Основная информация</h2>
+                     <div class="field">
+                        <label htmlFor="name1">Название курса</label>
+                        <input pInputText formControlName="title" id="name1" type="text" />
+                        <!-- <small>Please see our <a href=""> course title guideline</a>.</small> -->
+                     </div>
+                     <div class="field">
+                        <label htmlFor="name1">Описание</label>
+                        <br>
+                        <small>Коротко опишите Ваш курс.</small>
+                        <p-editor formControlName="description" [style]="{'height':'320px'}">
+                        </p-editor>
+                     </div>
+
+                     <div class="field">
+                        <label htmlFor="name1">Опишите основные изучаемые пункты</label>
+                        <br>
+                        <small>От 0 до 5</small>
+                        <p-editor formControlName="main_topics" [style]="{'height':'150px'}">
+                        </p-editor>
+                     </div>
+
+                     <h2>Секции</h2>
+                     <p-accordion>
+                        <p-accordionTab *ngFor="let section of sections_values; let i = index" [attr.data-index]="i"
+                           header={{section.title}} class="line-height-3 m-0">
+                           <div *ngIf="section.edited == false">
+                              <p>{{section.description}}</p>
+                              <div id='s-{{i}}' #s_{{i}}>
+
+                              </div>
+                              <button pButton pRipple type="button" label="Изменить секцию"
+                                 class="p-button-outlined mr-2 mb-2" (click)="editSection(i)">
+                              </button>
+                           </div>
+                           <div *ngIf="section.edited == true">
+                              <form [formGroup]="edit_section_form">
+                                 <div class="field">
+                                    <label htmlFor="name1">Название секции</label>
+                                    <input pInputText formControlName="title" id="name1" type="text" />
+                                 </div>
+                                 <div class="field">
+                                    <label htmlFor="name1">Описание</label>
+                                    <p-editor formControlName="description" [style]="{'height':'100px'}"></p-editor>
+                                    <!-- <small>Коротко опишите Ваш курс.</small> -->
+                                 </div>
+                                 <button pButton pRipple type="button" label="Сохранить изменения"
+                                    class="p-button-outlined mr-2 mb-2" (click)="saveSection(i)">
+                                 </button>
+
+                                 <button pButton pRipple type="button" label="Удалить секцию"
+                                    class="p-button-outlined mr-2 mb-2" (click)="deleteSection(i)">
+                                 </button>
+                              </form>
+                           </div>
+                        </p-accordionTab>
+
+                     </p-accordion>
+
+
+                     <a class="add__section-btn" (click)="addSection()">Добавить секцию курса</a>
+
+
+                  </div>
+               </div>
+               <div class="col-12 lg:col-4">
+                  <div class="card">
+                     <a class="save__changes-btn" (click)="enter()">Сохранить изменения</a>
+                     <!-- <a class="card-link" href="">Save Draft</a> -->
+                     <a class="save__changes-btn" href="">Удалить курс</a>
+
+                     <h2>Обложка курса</h2>
+                     <img class="video" [src]="edit_course_form.value.image_url" />
+                     <div class="field">
+                        <label htmlFor="name1">URL</label>
+                        <input formControlName="image_url" pInputText id="name1" type="text"
+                           placeholder="Введите ссылку на фото" />
+                        <!-- <small>Введите корректную ссылку на фото.</small> -->
+                     </div>
+
+                     <h2>Видео курса</h2>
+                     <video class="video" src="https://www.youtube.com/watch?v=3MQ097HzO70"></video>
+                     <div class="field">
+                        <label htmlFor="name1">URL</label>
+                        <input formControlName="trailer_url" pInputText id="name1" type="text"
+                           placeholder="Введите ссылку на видео" />
+                        <!-- <small>Введите корректную ссылку на видео.</small> -->
+                     </div>
+
+                     <h2>Опции</h2>
+                     <h5>Уровень курса</h5>
+                     <p-dropdown [options]="user_level" optionLabel="label" formControlName="user_level"
+                        placeholder="Выберите уровень курса" [showClear]="true">
+                     </p-dropdown>
+
+                     <h5>Категории курса</h5>
+                     <p-dropdown [options]="categories" formControlName="category" placeholder="Выберите категорию"
+                        [showClear]="true"></p-dropdown>
+                     <!-- <small>Выберите категорию</small> -->
+
+                     <h5>Цена</h5>
+                     <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon">₽</span>
+                        <input type="number" formControlName="price" pInputText placeholder="Введите цену">
+                     </div>
+                     <!-- <small>Рекомендованная цена: </small> -->
+
+                     <h5>Тэги</h5>
+                     <p-multiSelect [options]="tags" [(ngModel)]="selected_tags" formControlName="tags"
+                        defaultLabel="Выберите подходящие тэги" optionLabel="name" class="multiselect-custom">
+                        <ng-template let-value pTemplate="selectedItems">
+                           <div
+                              class="country-item country-item-value inline-flex align-items-center py-1 px-2 bg-primary text-primary border-round mr-2"
+                              *ngFor="let option of selected_tags">
+                              <!-- <img src="assets/demo/flags/flag_placeholder.png"
+                                 [class]="'flag flag-' + option.code.toLowerCase()" /> -->
+                              <div>{{option.name}}</div>
+                           </div>
+                           <div class="country-placeholder" *ngIf="!selected_tags || selected_tags.length == 0">
+                              Выберите тэги
+                           </div>
+                        </ng-template>
+                        <ng-template let-tag pTemplate="item">
+                           <div class="flex align-items-center country-item">
+                              <div>{{tag.name}}</div>
+                           </div>
+                        </ng-template>
+                     </p-multiSelect>
+                     <!-- <small>Select one or more tags.</small> -->
+                  </div>
+               </div>
+
+            </form>
+         </div>
+
+      </div>
+   </div>

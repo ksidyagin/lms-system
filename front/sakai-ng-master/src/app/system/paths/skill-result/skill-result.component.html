@@ -1,0 +1,53 @@
+<div class="grid grid-nogutter surface-section text-800">
+    <div class="col-12 md:col-6 p-6 text-center md:text-left flex align-items-center ">
+        <section>
+            <span class="block text-6xl font-bold mb-1">Learn Angular</span>
+            <div class="text-6xl text-primary font-bold mb-3"></div>
+            <p class="mt-0 mb-4 text-700 line-height-3">It is not every day that one of the most important front-end libraries in web development gets a complete overhaul. Keep your skills relevant and up-to-date with this comprehensive introduction to Google’s popular community project.</p>
+
+            <button pButton pRipple label="Начать" type="button" class="mr-3 p-button-raised"></button>
+            <button pButton pRipple label="Подробнее" type="button" class="p-button-outlined"></button>
+        </section>
+    </div>
+    <div class="col-12 md:col-6 overflow-hidden">
+        <img src="assets/demo/images/ang.png" alt="Image" class="md:ml-auto block md:h-full" style="clip-path: polygon(8% 0, 100% 0%, 100% 100%, 0 100%)">
+    </div>
+</div>
+<div class="course__time">
+    <div class="course__time-lessons"><i class="pi pi-calendar"></i> 12 уроков</div>
+    <div class="course__time-hours"><i class="pi pi-clock"></i> 2ч.46мин</div>
+</div>
+<div class="skill-assessment">
+    <div class="skill-assessment__info">
+        <div class="skill-assessment__info-title">Оценка Навыков</div>
+        <div class="skill-assessment__info-descr">Ваш результат.</div>
+    </div>
+    <p-steps [model]="items" [activeIndex]="1"></p-steps>
+</div>
+<div class="skill-result__number">
+    <div class="vl-top"></div>
+    <div class="question-circle">
+        <div class="question-circle__text">1</div>
+    </div>
+    <div class="vl-bottom"></div>
+</div>
+<div class="skill-result">
+        <h4 class="skill-result-title">
+           Рекомендуемый уровень: Intermediate
+        </h4>
+        <div class="skill-result-descr">
+            An angular 2 project written in typescript is* transpiled to javascript duri*ng the build process. Which of the following additional features are provided to the developer while programming on typescript over javascript?
+        </div>
+</div>
+<p-carousel [value]="products" [numVisible]="3" [numScroll]="3" [circular]="false" [responsiveOptions]="responsiveOptions" [showIndicators]="false">
+    <ng-template let-product pTemplate="item">
+            <div class="course">
+              <img src="https://luma.humatheme.com/public/images/paths/angular_testing_430x168.png" alt="">
+              <div class="course-title">{{product.name}}<i class="pi pi-heart"></i></div>
+            </div>
+    </ng-template>
+</p-carousel>
+<div class="skill-result-buttons">
+    <div class="skill-result-button">Начать Angular Intermediate</div>
+    <div class="skill-result-button__next">Посмотреть другие направления</div>
+</div>

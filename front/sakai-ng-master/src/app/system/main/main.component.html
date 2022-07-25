@@ -1,0 +1,218 @@
+<div id="home" class="surface-0 overflow-hidden">
+  <!--  хедер-->
+  <app-main-header [config]="config" [router]="router"></app-main-header>
+
+  <!--  блоки-->
+  <!--  зазывалка-->
+  <div id="hero" class="grid py-4 px-4 lg:px-8 relative">
+    <div class="mx-4 md:mx-8 mt-0 md:mt-4">
+      <h1 class="text-6xl font-bold text-gray-900 line-height-2"><span class="font-light block">PoliEngTeam</span>Все
+        куплено</h1>
+      <p class="font-normal text-2xl line-height-3 md:mt-3 text-gray-700">
+        В НГТУ открыта запись студентов на «цифровые кафедры», где можно будет получить дополнительную специальность по
+        IT-направлениям. Студентам доступны дополнительные квалификации по веб-программированию, дизайну, аналитике
+        данных и управлению проектами.</p>
+      <button (click)="router.navigate(['/register'])" pButton pRipple type="button" label="Присоединиться"
+        class="p-button-rounded text-xl border-none mt-3 bg-blue-500 font-normal line-height-3 px-3 text-white"></button>
+    </div>
+    <img src="assets/layout/images/screen-1.png" alt="" class="sm:mt-5 md:mt-0" style="right:10%; max-width: 600px">
+  </div>
+
+  <!-- характеристики курсов-->
+  <div id="features" class="py-4 px-4 lg:px-8 mt-5 mx-0 lg:mx-8">
+    <div class="grid justify-content-center">
+      <div class="col-12 text-center mt-8 mb-4">
+        <h2 class="text-900 font-normal mb-2">Тематики курсов</h2>
+        <span class="text-600 text-2xl">Вы найдете, чем заняться!</span>
+      </div>
+
+      <div class="col-12 md:col-12 lg:col-4 p-0 lg:pr-5 lg:pb-5 mt-4 lg:mt-0">
+        <div
+          style="height:160px; padding:2px; border-radius:10px; background: linear-gradient(90deg, rgba(253, 228, 165, 0.2),rgba(187, 199, 205, 0.2)), linear-gradient(180deg, rgba(253, 228, 165, 0.2),rgba(187, 199, 205, 0.2));">
+          <div class="p-3 surface-card h-full" style="border-radius:8px;">
+            <div class="flex align-items-center justify-content-center bg-yellow-200 mb-3"
+              style="width:3.5rem;height:3.5rem; border-radius:10px;">
+              <i class="pi pi-fw pi-palette  text-2xl text-yellow-700"></i>
+            </div>
+            <h5 class="mb-2 text-900">100+ курсов</h5>
+            <span class="text-600">Расширяйте свой кругозор.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 md:col-12 lg:col-4 p-0 lg:pr-5 lg:pb-5 mt-4 lg:mt-0">
+        <div
+          style="height:160px; padding:2px; border-radius:10px; background: linear-gradient(90deg, rgba(145,226,237,0.2),rgba(251, 199, 145, 0.2)), linear-gradient(180deg, rgba(253, 228, 165, 0.2), rgba(172, 180, 223, 0.2));">
+          <div class="p-3 surface-card h-full" style="border-radius:8px;">
+            <div class="flex align-items-center justify-content-center bg-cyan-200 mb-3"
+              style="width:3.5rem;height:3.5rem; border-radius:10px;">
+              <i class="pi pi-fw pi-users text-2xl text-cyan-700"></i>
+            </div>
+            <h5 class="mb-2 text-900">Дипломированные менторы</h5>
+            <span class="text-600">Профессионалы своего дела.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 md:col-12 lg:col-4 p-0 lg:pr-5 lg:pb-5 mt-4 lg:mt-0">
+        <div
+          style="height:160px; padding:2px; border-radius:10px; background: linear-gradient(90deg, rgba(187, 199, 205, 0.2),rgba(251, 199, 145, 0.2)), linear-gradient(180deg, rgba(253, 228, 165, 0.2),rgba(145, 210, 204, 0.2));">
+          <div class="p-3 surface-card h-full" style="border-radius:8px;">
+            <div class="flex align-items-center justify-content-center bg-bluegray-200 mb-3"
+              style="width:3.5rem;height:3.5rem; border-radius:10px;">
+              <i class="pi pi-fw pi-id-card text-2xl text-bluegray-700"></i>
+            </div>
+            <h5 class="mb-2 text-900">Полный контроль</h5>
+            <span class="text-600">Просмотр статистики и результатов.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--  скрины системы-->
+  <div id="highlights" class="py-4 px-4 lg:px-8 mx-0 my-6 lg:mx-8">
+    <div class="text-center">
+      <h2 class="text-900 font-normal mb-2">Безлимитный доступ</h2>
+      <span class="text-600 text-2xl">Изучайте курсы с разных устройств в любое время.</span>
+    </div>
+
+    <div class="grid mt-8 pb-2 md:pb-8">
+      <div class="flex justify-content-center col-12 lg:col-6 bg-purple-100 p-0 flex-order-1 lg:flex-order-0"
+        style="border-radius:8px;">
+        <img src="assets/layout/images/mockup.svg" class="w-11" alt="mockup mobile">
+      </div>
+
+      <div class="col-12 lg:col-6 my-auto flex flex-column lg:align-items-end text-center lg:text-right">
+        <div class="flex align-items-center justify-content-center bg-purple-200 align-self-center lg:align-self-end"
+          style="width:4.2rem; height:4.2rem; border-radius: 10px;">
+          <i class="pi pi-fw pi-mobile text-5xl text-purple-700"></i>
+        </div>
+        <h2 class="line-height-1 text-900 text-4xl font-normal">Приложение для смартфона</h2>
+        <span class="text-700 text-2xl line-height-3 ml-0 md:ml-2" style="max-width:650px;">Фронтэндеры не умеют
+          работать с android фреймворками.</span>
+      </div>
+    </div>
+
+    <div class="grid my-8 pt-2 md:pt-8">
+      <div class="col-12 lg:col-6 my-auto flex flex-column text-center lg:text-left lg:align-items-start">
+        <div class="flex align-items-center justify-content-center bg-yellow-200 align-self-center lg:align-self-start"
+          style="width:4.2rem; height:4.2rem; border-radius:10px;">
+          <i class="pi pi-fw pi-desktop text-5xl text-yellow-700"></i>
+        </div>
+        <h2 class="line-height-1 text-900 text-4xl font-normal">Облачный сервис</h2>
+        <span class="text-700 text-2xl line-height-3 mr-0 md:mr-2" style="max-width:650px;">Входите с любого устройства,
+          в любой точке планеты.</span>
+      </div>
+
+      <div class="flex justify-content-end flex-order-1 sm:flex-order-2 col-12 lg:col-6 bg-yellow-100 p-0"
+        style="border-radius:8px;">
+        <img src="assets/layout/images/mockup-desktop.svg" class="w-11" alt="mockup">
+      </div>
+    </div>
+  </div>
+
+  <div id="pricing" class="py-4 px-4 lg:px-8 my-2 md:my-4">
+    <div class="text-center">
+      <h2 class="text-900 font-normal mb-2">Предлагаемые тарифы</h2>
+      <span class="text-600 text-2xl">Уточняйте у администрации...</span>
+    </div>
+
+    <div class="grid justify-content-between mt-8 md:mt-0">
+      <div class="col-12 lg:col-4 p-0 md:p-3">
+        <div class="p-3 flex flex-column border-200 pricing-card cursor-pointer"
+          style="border:2px solid; border-radius:10px;">
+          <h3 class="text-900 text-center my-5">Бесплатный</h3>
+          <img src="assets/layout/images/free.svg" class="w-10 h-10 mx-auto" alt="free">
+          <div class="my-5 text-center">
+            <span class="text-5xl font-bold mr-2 text-900">$0</span>
+            <span class="text-600">навсегда</span>
+            <button pButton pRipple label="Опробовать"
+              class="block mx-auto mt-4 p-button-rounded border-none ml-3 font-light line-height-2 bg-blue-500 text-white"></button>
+          </div>
+          <p-divider class="w-full bg-surface-200"></p-divider>
+          <ul class="my-5 list-none p-0 flex text-900 flex-column">
+            <li class="py-2">
+              <i class="pi pi-fw pi-check text-xl text-cyan-500 mr-2"></i>
+              <span class="text-xl line-height-3">Отзывчивый интерфейс</span>
+            </li>
+            <li class="py-2">
+              <i class="pi pi-fw pi-check text-xl text-cyan-500 mr-2"></i>
+              <span class="text-xl line-height-3">Система отзывов</span>
+            </li>
+            <li class="py-2">
+              <i class="pi pi-fw pi-check text-xl text-cyan-500 mr-2"></i>
+              <span class="text-xl line-height-3">Ведение истории</span>
+            </li>
+            <li class="py-2">
+              <i class="pi pi-fw pi-check text-xl text-cyan-500 mr-2"></i>
+              <span class="text-xl line-height-3">Составление курсов</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-12 lg:col-4 p-0 md:p-3 mt-4 md:mt-0">
+        <div class="p-3 flex flex-column border-200 pricing-card cursor-pointer"
+          style="border:2px solid; border-radius:10px;">
+          <h3 class="text-900 text-center my-5">Начинающий</h3>
+          <img src="assets/layout/images/startup.svg" class="w-10 h-10 mx-auto" alt="startup">
+          <div class="my-5 text-center">
+            <span class="text-5xl font-bold mr-2 text-900">$1</span>
+            <span class="text-600">в месяц</span>
+            <button pButton pRipple label="Присоединиться"
+              class="block mx-auto mt-4 p-button-rounded border-none ml-3 font-light line-height-2 bg-blue-500 text-white"></button>
+          </div>
+          <p-divider class="w-full bg-surface-200"></p-divider>
+          <ul class="my-5 list-none p-0 flex text-900 flex-column">
+            <li class="py-2">
+              <i class="pi pi-fw pi-check text-xl text-cyan-500 mr-2"></i>
+              <span class="text-xl line-height-3">* Все преимущества прошлых тарифов</span>
+            </li>
+            <li class="py-2">
+              <i class="pi pi-fw pi-check text-xl text-cyan-500 mr-2"></i>
+              <span class="text-xl line-height-3">Безлимитные пуш уведомления</span>
+            </li>
+            <li class="py-2">
+              <i class="pi pi-fw pi-check text-xl text-cyan-500 mr-2"></i>
+              <span class="text-xl line-height-3">Связь с администраторами</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-12 lg:col-4 p-0 md:p-3 mt-4 md:mt-0">
+        <div class="p-3 flex flex-column border-200 pricing-card cursor-pointer"
+          style="border:2px solid; border-radius:10px;">
+          <h3 class="text-900 text-center my-5">Продвинутый</h3>
+          <img src="assets/layout/images/enterprise.svg" class="w-10 h-10 mx-auto" alt="enterprise">
+          <div class="my-5 text-center">
+            <span class="text-5xl font-bold mr-2 text-900">$10</span>
+            <span class="text-600">в месяц</span>
+            <button pButton pRipple label="Запросить"
+              class="block mx-auto mt-4 p-button-rounded border-none ml-3 font-light line-height-2 bg-blue-500 text-white"></button>
+          </div>
+          <p-divider class="w-full bg-surface-200"></p-divider>
+          <ul class="my-5 list-none p-0 flex text-900 flex-column">
+            <li class="py-2">
+              <i class="pi pi-fw pi-check text-xl text-cyan-500 mr-2"></i>
+              <span class="text-xl line-height-3">* Все преимущества прошлых тарифов</span>
+            </li>
+            <li class="py-2">
+              <i class="pi pi-fw pi-check text-xl text-cyan-500 mr-2"></i>
+              <span class="text-xl line-height-3">Связь с разработчика для добавления функционала</span>
+            </li>
+            <li class="py-2">
+              <i class="pi pi-fw pi-check text-xl text-cyan-500 mr-2"></i>
+              <span class="text-xl line-height-3">Бесплатная доставка бумажных материалов</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!--  футер-->
+  <app-main-footer [config]="config" [router]="router"></app-main-footer>
+</div>

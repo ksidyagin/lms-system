@@ -1,0 +1,42 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:14.4
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "shkaf"
+      PGDATA: "/var/lib/postgresql/data/pgdata"
+    volumes:
+      - ./back/pg/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./back/pg:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    restart: always
+
+  backend-api:
+    build: ./back/API
+    depends_on:
+      - postgres
+    environment:
+      - NODE_ENV=production
+    env_file:
+      - .env
+    ports:
+      - "5000:5000"
+    expose:
+      - 5000
+    restart: unless-stopped
+    
+  backend-auth:
+    build: ./back/Auth
+    depends_on:
+      - postgres
+    environment:
+      - NODE_ENV=production
+    env_file:
+      - .env
+    ports:
+      - "4800:4800"
+    expose:
+      - 4800
+    restart: unless-stopped

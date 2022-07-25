@@ -1,0 +1,173 @@
+$fontSize:10px;
+$borderRadius:12px;
+$transitionDuration:.2s;
+.browse-paths{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.courses{
+    width: 75%;
+}
+.courses-paths{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 10px auto;
+}
+.courses-paths__item{
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: rgba(39,44,51,.5) 1px solid;
+    flex: 1 1 0;
+}
+@media screen and (max-width:1600px){
+    .courses-paths__item{
+        width: 20rem;
+    }
+}
+
+@media screen and (max-width:769px){
+    .courses-paths__item{
+        width: 100%;
+    }
+}
+.item-info__title{
+    font-size: 1rem;
+    font-weight: 600;
+    color: #303840;
+    line-height: 1.25;
+    margin: 0 20px;
+}
+.item-info__descr{
+    font-size: .8125rem;
+    color: rgba(39,44,51,.5);
+    margin: 0 20px;
+
+}
+
+.categories-sidebar {
+    width: 22%;
+    overflow-y: auto;
+    margin: 0 0 14px;
+    user-select: none;
+    transition: transform $transitionDuration, left $transitionDuration;
+    background-color: var(--surface-overlay);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0px 3px 5px rgba(0,0,0,.02), 0px 0px 2px rgba(0,0,0,.05), 0px 1px 4px rgba(0,0,0,.08)
+}
+
+.categories-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+        &.categories-menuitem-category {
+            margin-top: .75rem;
+
+            &:first-child {
+                margin-top: 0;
+            }
+            
+            ul {
+                li{
+                    transition: color $transitionDuration;
+                    border-radius: $borderRadius;
+                    padding: .75rem 1rem;
+                    transition: background-color .15s;
+                    &:hover {
+                        background-color: #f6f9fc;
+                    }
+                }
+            }
+        }
+
+        .categories-menuitem-root-text {
+            text-transform: uppercase;
+            color:var(--surface-900);
+            font-weight: 600;
+            margin-bottom: .5rem;
+            font-size: .875rem;
+        }
+
+        a {
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            color:var(--text-color);
+            transition: color $transitionDuration;
+            border-radius: $borderRadius;
+            padding: .75rem 1rem;
+            transition: background-color .15s;
+
+            span {
+                margin-left: 0.5rem;
+            }
+
+            .menuitem-toggle-icon {
+                margin-left: auto;
+            }
+
+            &:hover {
+                background-color: #f6f9fc;
+            }
+
+            &.router-link-exact-active {
+                font-weight: 700;
+                color: var(--primary-color);
+            }
+        }
+
+        &.active-menuitem {
+            > a {
+                .menuitem-toggle-icon {
+                    &:before {
+                        content: '\e933';
+                    }
+                }
+            }
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+
+            &.categories-submenu-wrapper-enter {
+                max-height: 0;
+            }
+
+            &.categories-submenu-wrapper-enter-active {
+                overflow: hidden;
+                max-height: 1000px;
+                transition: max-height 1s ease-in-out;
+            }
+
+            &.categories-submenu-wrapper-enter-done {
+                transform: none;
+            }
+
+            &.categories-submenu-wrapper-exit {
+                max-height: 1000px;
+            }
+
+            &.categories-submenu-wrapper-exit-active {
+                overflow: hidden;
+                max-height: 0;
+                transition: max-height 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+            }
+
+            ul {
+                padding-left: 1rem;
+            }
+        }
+    }
+}

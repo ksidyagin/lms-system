@@ -1,0 +1,133 @@
+<div>
+    <div class="mainboard">
+        <h1 class="course-name">{{course_info.title}}</h1>
+        <p class="course-desc">
+            {{course_info.preview_description}}
+        </p>
+        <div class="btns">
+            <button type="button" class="p-button-outlined first-button mr-2 mb-2">
+                <a class="course__watch-trailer" href="{{course_info.trailer_url}}" target="_blank">Смотреть трейлер</a>
+            </button>
+            <button pButton pRipple type="button" label="Начать"
+                class="p-button-raised second-button mr-2 mb-2"></button>
+        </div>
+    </div>
+    <div class="container short-info">
+        <div class="info">
+            <img [src]="avatarURL" />
+            <div class="info-author">
+                <p class="author-name">
+                    {{course_info.author_second_name}} {{course_info.author_first_name}}
+                </p>
+                <p class="autort-duty">{{authorDuty}}</p>
+            </div>
+            <p class="item">{{course_time_hours}}ч {{course_time_minutes}}м</p>
+            <p class="item">{{user_level}}</p>
+        </div>
+        <div class="rating">
+            <p-rating [cancel]="false" [readonly]="true" [ngModel]="courseRating"></p-rating>
+            <p>{{ratingList.rating}} баллов</p>
+        </div>
+        <a class="edit_course" *ngIf="user_role == 'instructor'" (click)="goToEditCourse()">Изменить курс</a>
+    </div>
+    <hr>
+    <div class="course-content">
+        <div class="label">
+            <h2>Содержание</h2>
+        </div>
+        <div class="content">
+            <div class="menu">
+                <div *ngFor="let item of course_info.sections" class="container menu-item">
+                    <div class="menu-label">
+                        <p class="">{{item.title}}</p>
+                    </div>
+                    <div class="points">
+                        <div *ngFor="let point of item.modules" class="point">
+                            <hr>
+                            {{point.title}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-alert container">
+
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="container about-course">
+        <div>
+            <h2>О курсе</h2>
+            <p>{{course_info.description}}</p>
+        </div>
+        <hr>
+        <div>
+            <h2>Что вы будете изучать</h2>
+            <div *ngFor="let topic of course_info.main_topics" class="task">
+                <button pButton type="button" icon="pi pi-check" class="p-button-text mr-2 mb-2"></button>
+                <p>{{topic}}</p>
+            </div>
+        </div>
+        <hr>
+        <div>
+            <h2>Об авторе</h2>
+            <p>{{course_info.author_description}}</p>
+            <div class="author-profile">
+                <div class="author-profile-flex">
+                    <p class="name">
+                        <img class="name-img" [src]="avatarURL" />
+                        {{course_info.author_second_name}} {{course_info.author_first_name}}
+                    </p>
+                    <button pButton pRipple type="button" label="Подписаться"
+                        class="p-button-outlined mr-2 mb-2"></button>
+                    <button pButton pRipple type="button" label="Посмотреть профиль"
+                        class="p-button-raised mr-2 mb-2"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="container feedback">
+        <div class="feedback-label">
+            <h1>Отзывы студентов</h1>
+            <p>
+                Что другие студенты, ставшие профессионалами, говорят о нас после обучения у нас и достижения своих
+                целей.
+            </p>
+        </div>
+        <p-carousel [value]="ratingList.feedbacks" [numVisible]="2" [numScroll]="2" [circular]="false"
+            [responsiveOptions]="carouselResponsiveOptions">
+            <ng-template let-feedback pTemplate="item">
+                <div class="border-round m-2 text-center p-2" style="border: 1px solid var(--surface-d)">
+                    <p class="feedback-text">{{feedback.description}}</p>
+                </div>
+                <div class="feedback-info">
+                    <div class="reduction">
+                        <!-- <span>{{feedback.author_name[0]}}{{feedback.author_name[1]}}</span> -->
+                    </div>
+                    <!-- <span>{{feedback.author_name}}</span> -->
+                    <p-rating [cancel]="false" [readonly]="true" [ngModel]="feedback.mark"></p-rating>
+                </div>
+            </ng-template>
+        </p-carousel>
+        <hr>
+        <div>
+            <h2>Рейтинг курса</h2>
+            <div class="feedback-rating">
+                <div class="rating-score">
+                    <h1 style="margin-bottom: 0;">{{ratingList.rating}}</h1>
+                    <p-rating [cancel]="false" [readonly]="true" [ngModel]="courseRating"></p-rating>
+                    <p>{{ratingList.count}} отзывов</p>
+                </div>
+                <div class="rating-bars">
+                    <div class="bar" *ngFor="let item of ratingList.list">
+                        <p-progressBar [value]="item.count / ratingList.count * 100" [showValue]="false">
+                        </p-progressBar>
+                        <p-rating [cancel]="false" [readonly]="true" [ngModel]="item.mark"></p-rating>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

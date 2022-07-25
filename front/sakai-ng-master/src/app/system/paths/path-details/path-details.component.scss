@@ -1,0 +1,205 @@
+#hero{
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), radial-gradient(77.36% 256.97% at 77.36% 57.52%, #EEEFAF 0%, #C3E3FA 100%);
+    height:700px;
+    overflow:hidden;
+}
+
+  .pricing-card:hover{
+    border:2px solid var(--cyan-200) !important;
+  }
+
+  @media screen and (min-width: 768px) {
+    #hero{
+        -webkit-clip-path: ellipse(150% 87% at 93% 13%);
+        clip-path: ellipse(150% 87% at 93% 13%);
+        height: 530px;
+    }
+  }
+
+  @media screen and (min-width: 1300px){
+    #hero > img {
+      position: absolute;
+      transform:scale(1.2);
+      top:15%;
+    }
+
+    #hero > div > p { 
+      max-width: 450px;
+    }
+  }
+
+  @media screen and (max-width: 1300px){
+    #hero {
+      height: 600px;
+    }
+
+    #hero > img {
+      position:static;
+      transform: scale(1);
+      margin-left: auto;
+    }
+
+    #hero > div {
+      width: 100%;
+    }
+
+    #hero > div > p {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+
+  .course__time{
+      display: flex;
+      flex-direction: row;
+      background-color: #007bff;
+      border-bottom: 2px solid #e9edf2;
+      align-items: center;
+      justify-content: space-around;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.5;
+      height: 40px;
+      padding: 24px 0;
+  }
+
+  .course-about{
+      padding: 32px 0;
+      background-color: rgba(255, 255, 255, 0.822);
+      color: #272c33;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-around;
+      border-bottom: 2px solid #e9edf2;
+      border-top: 2px solid #e9edf2;
+  }
+  .course-about__block{
+      width: 40%;
+      box-sizing: border-box;
+  }
+
+  .course-about__block-title{
+    text-transform: uppercase;
+    font-size: .9375rem;
+    color: #303840;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin: 0 0 16px;
+  }
+  .course-about__block-descr{
+    font-size: 13px;
+  }
+
+  .skill-assessment{
+    padding: 32px 0;
+    background-color: #fff;
+    color: #272c33;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 2px solid #e9edf2;
+    border-top: 2px solid #e9edf2;
+  }
+  .skill-assessment__info{
+    border-left: 3px solid #5567ff;
+    padding-left: 2rem;
+  }
+  .skill-assessment__info-title{
+    margin-bottom: 0.5rem;
+    font-size: 1.414rem;
+    color: #303841;
+  }
+  .skill-assessment__info-descr{
+    margin-bottom: 1.5rem;
+    font-size: 13px;
+    color: rgba(39,44,51,.7);
+  }
+  ::ng-deep .p-steps-title {
+    margin: 0px 10px;
+  }
+
+  .levels{
+    padding: 32px 0;
+    background-color: rgba(255, 255, 255, 0.822);
+    color: #272c33;
+    border-bottom: 2px solid #e9edf2;
+    border-top: 2px solid #e9edf2;
+  }
+  .custom-marker {
+    display: flex;
+    background-color: #fff;
+    width: 2rem;
+    height: 2rem;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    border: 1px #dee2e6 solid;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  
+  ::ng-deep {
+    .p-timeline-event-content,
+    .p-timeline-event-opposite {
+      line-height: 1;
+      flex: 0;
+    }
+  }
+    ::ng-deep {
+      .customized-timeline {
+        .p-timeline-event:nth-child(even) {
+          flex-direction: row !important;
+  
+          .p-timeline-event-content {
+            text-align: left !important;
+          }
+        }
+  
+        .p-timeline-event-opposite {
+          flex: 0;
+        }
+  
+        .p-card {
+          margin-top: 1rem;
+        }
+      }
+    }
+
+::ng-deep .p-timeline-vertical .p-timeline-event-content {
+  width: 90%;
+}
+.course {
+      margin: 5px;
+      box-shadow: 0px 0px 5px rgb(0, 0, 0);
+      border-radius: 10px;
+}
+    
+.course-title {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      text-align: center;
+      color: #272C33;
+      font-weight: bold;
+      background-color: #ffffff;
+      font-size: 16px;
+      padding: 2%;
+      border-bottom-right-radius: 10px;
+      border-bottom-left-radius: 10px;
+}
+    
+.course img {
+      width: 100%;
+      border-top-right-radius: 10px;
+      border-top-left-radius: 10px;
+      height: auto;
+      object-fit: cover;
+      display: block;
+      position: relative;
+}

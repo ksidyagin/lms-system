@@ -1,0 +1,221 @@
+#hero{
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), radial-gradient(77.36% 256.97% at 77.36% 57.52%, #EEEFAF 0%, #C3E3FA 100%);
+    height:700px;
+    overflow:hidden;
+}
+
+.pricing-card:hover{
+    border:2px solid var(--cyan-200) !important;
+}
+
+@media screen and (min-width: 768px) {
+    #hero{
+        -webkit-clip-path: ellipse(150% 87% at 93% 13%);
+        clip-path: ellipse(150% 87% at 93% 13%);
+        height: 530px;
+    }
+}
+
+@media screen and (min-width: 1300px){
+    #hero > img {
+      position: absolute;
+      transform:scale(1.2);
+      top:15%;
+    }
+
+    #hero > div > p { 
+      max-width: 450px;
+    }
+}
+
+@media screen and (max-width: 1300px){
+    #hero {
+      height: 600px;
+    }
+
+    #hero > img {
+      position:static;
+      transform: scale(1);
+      margin-left: auto;
+    }
+
+    #hero > div {
+      width: 100%;
+    }
+
+    #hero > div > p {
+      width: 100%;
+      max-width: 100%;
+    }
+}
+
+.course__time{
+      display: flex;
+      flex-direction: row;
+      background-color: #007bff;
+      border-bottom: 2px solid #e9edf2;
+      align-items: center;
+      justify-content: space-around;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.5;
+      height: 40px;
+      padding: 24px 0;
+}
+
+.skill-assessment{
+    padding: 32px 0;
+    background-color: #e9edf2;
+    color: #272c33;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 2px solid #a1a1a145;
+    border-top: 2px solid #a1a1a145;
+}
+.skill-assessment__info{
+    border-left: 3px solid #5567ff;
+    padding-left: 2rem;
+}
+.skill-assessment__info-title{
+    margin-bottom: 0.5rem;
+    font-size: 1.414rem;
+    color: #303841;
+}
+.skill-assessment__info-descr{
+    margin-bottom: 1.5rem;
+    font-size: 13px;
+    color: rgba(39,44,51,.7);
+}
+::ng-deep .p-steps-title {
+    margin: 0px 10px;
+}
+::ng-deep .p-steps .p-steps-item .p-menuitem-link {
+    background: #e9edf2;
+}
+::ng-deep .p-steps ul {
+    background: #e9edf2;
+}
+.skill-result{
+    background-color: #e9edf2;
+    padding-top: 2rem;
+}
+.vl-top {
+    border-left: 2px solid #a1a1a145;
+    height: 28px;
+    margin-left: 1.2rem;
+}
+.question-circle{
+    border-radius: 100%;
+    border: 2px solid rgb(233, 237, 242);
+    background-color: rgb(245, 247, 250);
+    margin-right: 0.75rem;
+    width: 2.5rem;
+    height: 2.5rem;
+}
+.question-circle__text{
+    font-weight: 600;
+    font-size: 1.414rem;
+    line-height: 1.414;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(48, 56, 64);
+}
+
+.skill-result__number{
+    float: left;
+}
+
+.vl-bottom {
+    border-left: 2px solid #a1a1a145;
+    height: 250px;
+    margin-left: 1.2rem;
+}
+
+.skill-result-title{
+    color: #303840;
+    font-size: 22.6px;
+}
+.skill-result-descr{
+    margin-bottom: 2rem;
+    color: rgba(39, 44, 51, 0.7);
+    font-size: 13px;
+}
+.skill-result-buttons{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    justify-content: flex-start;
+    align-items: center;
+}
+.skill-result-button{
+    cursor: pointer;
+    color: #868E96;
+    margin: 0 16px 0 0;
+    text-align: center;
+    background-color: transparent;
+    border: 1px solid #868e96;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+.skill-result-button__next{
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    font-size: 13px;
+    text-transform: uppercase;
+    background-color: #ed0b4c;
+    border: 1px solid;
+    border-color: #ed0b4c;
+    color: #fff;
+    cursor: pointer;
+    margin: 0 16px 0 0;
+    text-align: center;
+}
+.skill-result-button__next:hover{
+    background-color: #c80940;
+    border-color: #bc093c;
+}
+
+.skill-result-button:hover {
+    background-color: #868e96;
+    border-color: #868e96;
+    color: #fff;
+}
+
+
+.course {
+    margin: 5px;
+    box-shadow: 0px 0px 5px rgb(0, 0, 0);
+    border-radius: 10px;
+  }
+  
+.course-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    color: #272C33;
+    font-weight: bold;
+    background-color: #ffffff;
+    font-size: 16px;
+    padding: 2%;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+  
+.course img {
+    width: 100%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    position: relative;
+}

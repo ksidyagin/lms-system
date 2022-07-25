@@ -1,0 +1,170 @@
+.container {
+    background-color: white !important;
+    margin-bottom: 1rem;
+    padding: 1rem 2rem;
+    box-shadow: 0px 3px 5px rgb(0 0 0 / 2%), 0px 0px 2px rgb(0 0 0 / 5%), 0px 1px 4px rgb(0 0 0 / 8%);
+}
+
+.course{
+    border-radius: 12px 12px 0 0 ;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0 !important;
+}
+
+.course-logo {
+    height: 100%;
+}
+
+.course-logo > img {
+    height: 100%;
+}
+
+.course-name {
+    color: black;
+    font-size: 130%;
+    font-weight: 600;
+    margin: 0;
+}
+
+.course-info {
+    height: 100%;
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.course-info > .author-info > .name {
+    font-weight: 600;
+}
+
+.lesson {
+    margin: 0 !important;
+    background-color: rgba(127, 0, 239, 1) !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.step {
+    background: rgba(127, 0, 239, 1) !important;
+}
+
+.main-lesson {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 3rem;
+}
+
+.video-lesson {
+    width: 85%;
+    height: 300px;
+    background-color: antiquewhite;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.video-lesson > video {
+    width: 100%;
+}
+
+.lesson-info {
+    width: 70%;
+}
+
+.lesson-info > h1 {
+    font-size: 350%;
+    color: white;
+}
+
+.lesson-info > p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 150%;
+}
+
+.lesson-time > h1{
+    font-size: 300%;
+    color: white;
+}
+
+.button {
+    color: black !important;
+    font-size: 1.5rem;
+    background-color: white;
+    height: 100% !important;
+    border: 2px solid white
+}
+
+.button:hover {
+    transform: none !important;
+    color: white !important ;
+    background-color: rgba(127, 0, 239, 1) !important;
+    border-color: rgba(127, 0, 239, 1);
+}
+
+.short-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem !important;
+    border-radius: 0 0 12px 12px;
+}
+
+.info {
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.info > * {
+    margin-right: 1rem;
+}
+
+.info > .item{
+    margin-right: 1rem;
+    font-weight: 500;
+    margin-top: 0;
+    margin-bottom: 0; 
+}
+
+.info > img {
+    border-radius: 50%;
+    height: 40px;
+    margin-right: 1rem;
+}
+
+.info-author {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+}
+
+.info-author > .author-name {
+    margin: 0 !important;
+    color: black !important;
+    font-weight: 500;
+}
+
+.info-author > .author-duty {
+    
+}
+
+.course-time > p {
+        
+}
+
+.rating {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

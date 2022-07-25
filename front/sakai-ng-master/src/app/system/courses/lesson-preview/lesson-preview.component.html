@@ -1,0 +1,52 @@
+<div class="lesson-preview">
+
+    <div class="course container">
+        <div class="course-logo">
+            <img [src]="logoURL"/>
+        </div>
+        <div class="course-info">
+            <p class="course-name">
+                {{courseName}}
+            </p>
+            <div class="author-info">
+                <span class="name">{{authorName}} </span>
+                <span>{{authorPath}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="lesson container">
+
+        <div class="video-lesson">
+            <video>
+                <source [src]="lessonURL">
+            </video>
+        </div>
+
+        <div class="main-lesson">
+            <div class="lesson-info">
+                <h1>{{lessonName}}</h1>
+                <p>{{lessonDesc}}</p>
+                <button pButton pRipple type="button" label="Start"
+                class="p-button-raised button mr-2 mb-2"></button>
+            </div>
+            <div class="lesson-time">
+                <h1>{{lessonTime}}</h1>
+            </div>
+        </div>
+    </div>
+    <div class="container short-info">
+        <div class="info">
+            <img [src]="avatarURL" />
+            <div class="info-author">
+                <p class="author-name">{{authorName}}</p>
+                <p class="autort-duty">{{authorDuty}}</p>
+            </div>
+            <p class="item">{{courseTime}}</p>
+            <p class="item">{{courseLevel}}</p>
+        </div>
+        <div class="rating">
+            <p-rating [cancel]="false" [readonly]="true" [ngModel]="courseRating"></p-rating>
+            <p>{{courseRatingCount}} ratings</p>
+        </div>
+    </div>
+</div>

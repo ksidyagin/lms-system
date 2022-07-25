@@ -1,0 +1,58 @@
+<div class="card">
+    <form (ngSubmit)="enter()" [formGroup]="loginForm">
+        <h5>Log In</h5>
+        <p style="color: #251c5b;">{{welcomeMsg}}</p>
+
+        <div class="card p-fluid">
+            <div class="field">
+                <label htmlFor="email1">Email</label>
+                <input formControlName="email" pInputText id="email1" type="text" ngModel email/>
+            </div>
+            <div class="field">
+                <label htmlFor="password1">Password</label>
+                <input formControlName="password" pInputText id="password1" type="text" />
+            </div>
+        </div>
+
+
+        <button pButton pRipple label="Log in" [disabled]="loginForm.invalid" class="mr-2 mb-2"></button>
+        <p-button routerLink="../register" label="Register" styleClass="p-button-link mr-2 mb-2"></p-button>
+        <p-button routerLink="../forgot_password" label="Forgot password" styleClass="p-button-link mr-2 mb-2"></p-button>
+    </form>
+</div>
+
+<h1>ПОЛЬЗУЙТЕСЬ ВЕРХНИМ</h1>
+
+<div class="surface-0 flex align-items-center justify-content-center min-h-screen min-w-screen overflow-hidden">
+  <div class="grid justify-content-center p-2 lg:p-0" style="min-width:80%">
+    <div class="col-12 mt-5 xl:mt-0 text-center">
+      <img src="assets/layout/images/{{config.dark ? 'logo-white' : 'logo-dark'}}.svg" alt="Sakai logo" class="mb-5" style="width:81px; height:60px;">
+    </div>
+    <div [formGroup]="loginForm" class="col-12 xl:col-6" style="border-radius:56px; padding:0.3rem; background: linear-gradient(180deg, var(--primary-color) 10%, rgba(33, 150, 243, 0) 30%);">
+      <div class="h-full w-full m-0 py-7 px-4" style="border-radius:53px; background: linear-gradient(180deg, var(--surface-50) 38.9%, var(--surface-0));">
+        <div class="text-center mb-5">
+<!--          <img src="assets/layout/images/avatar.png" alt="Image" height="50" class="mb-3">-->
+          <div class="text-900 text-3xl font-medium mb-3">Добро пожаловать!</div>
+          <span class="text-600 font-medium">Войдите, чтобы продолжить</span>
+        </div>
+
+        <div class="w-full md:w-10 mx-auto">
+          <label for="email1" class="block text-900 text-xl font-medium mb-2">Email</label>
+          <input formControlName="email" id="email1" type="text" placeholder="Email адрес" pInputText class="w-full mb-3" style="padding:1rem;">
+
+          <label for="password1" class="block text-900 font-medium text-xl mb-2">Пароль</label>
+          <input formControlName="password" id="password1" type="text" placeholder="Пароль" pInputText class="w-full mb-3" style="padding:1rem;">
+
+          <div class="flex align-items-center justify-content-between mb-5">
+            <div class="flex align-items-center">
+              <p-checkbox id="rememberme1" [binary]="true" styleClass="mr-2"></p-checkbox>
+              <label for="rememberme1">Запомнить</label>
+            </div>
+            <a [routerLink]="'/forgot_password'" class="font-medium no-underline ml-2 text-right cursor-pointer" style="color: var(--primary-color)">Забыли пароль?</a>
+          </div>
+          <button (click)="enter()" pButton pRipple label="Sign In" class="w-full p-3 text-xl"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
